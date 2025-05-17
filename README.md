@@ -17,7 +17,7 @@ This Discourse plugin adds a **Date of Birth (DOB)** calendar picker to user pro
 
 1. SSH into your Discourse server.
 2. Navigate to the `plugins` directory: cd /var/www/discourse/plugins
-3. Clone the repository: git clone https://github.com/queernook/discourse-profile-dob.git
+3. Clone the repository: git clone [https://github.com/queernook/discourse-profile-dob](https://github.com/QueerNook/Discourse-DOB-Picker)
 4. Rebuild the Discourse app: cd /var/www/discourse
 ./launcher rebuild app
 5. In Discourse Admin → Customize → User Fields, create a new custom field:
