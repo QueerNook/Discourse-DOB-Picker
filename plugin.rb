@@ -2,7 +2,7 @@
 # about: Adds a Date of Birth calendar picker to user profiles
 # version: 0.1
 # authors: QueerNook Team
-# url: https://github.com/yourusername/discourse-profile-dob
+# url: https://github.com/queernook/discourse-profile-dob
 
 enabled_site_setting :dob_picker_enabled
 
