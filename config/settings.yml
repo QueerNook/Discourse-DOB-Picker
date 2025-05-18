@@ -1,0 +1,6 @@
+plugins:
+  dob_picker_enabled:
+    default: true
+    client: true
+    type: bool
+    description: "Enable or disable the Date of Birth Picker Plugin"
