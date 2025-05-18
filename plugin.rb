@@ -1,6 +1,6 @@
 # name: discourse-profile-dob
 # about: Adds a date of birth field to user profiles
-# version: 0.1
+# version: 3.0.1
 # authors: QueerNook
 # url: https://github.com/QueerNook/Discourse-Profile-DOB
 
