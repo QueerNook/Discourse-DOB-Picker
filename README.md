@@ -21,13 +21,32 @@ This is a WIP plugin with multiple bugs i am slowly updating this
 2. Navigate to the `plugins` directory: cd /var/www/discourse/plugins
 3. Clone the repository: git clone [https://github.com/queernook/discourse-profile-dob](https://github.com/QueerNook/Discourse-DOB-Picker)
 4. Rebuild the Discourse app:
-   cd /var/www/discourse
-   ./launcher rebuild app
+   "cd /var/www/discourse
+   ./launcher rebuild app"
 6. In Discourse Admin → Customize → User Fields, create a new custom field:
 Name: Date of Birth
 Type: Text
 Show on Public Profile: No (Recommended)
 Required: Optional or Yes (your choice)
+
+## Docker installation - Access and Install Plugins in Dockerized Discourse
+
+1. SSH into your server.
+2. Navigate to the Docker-managed Discourse installation:
+"cd /var/discourse"
+If that fails, try:
+"cd /srv/discourse"
+
+3. Enter the Container Properly:
+"./launcher enter app"
+4. Then, inside the container, navigate to:
+"cd /var/www/discourse/plugins"
+5. Clone the repository: "git clone [https://github.com/queernook/discourse-profile-dob](https://github.com/QueerNook/Discourse-DOB-Picker)"
+6. Exit container: "exit"
+7. Rebuild the Discourse app:
+"cd /var/www/discourse
+./launcher rebuild app"
+
 
 ---
 
