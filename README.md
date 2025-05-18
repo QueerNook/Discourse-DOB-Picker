@@ -2,6 +2,8 @@
 
 This Discourse plugin adds a **Date of Birth (DOB)** calendar picker to user profiles using the native HTML5 date picker.
 
+This is a WIP plugin with multiple bugs i am slowly updating this 
+
 ---
 
 ## 📦 Features
