@@ -6,9 +6,7 @@
 
 enabled_site_setting :profile_dob_enabled
 
-register_site_setting_category(:profile_dob, 'profile_dob') do |settings|
-  settings.register(:profile_dob_enabled, type: :bool, default: true, description: 'Enable date of birth field in user profiles')
-end
+register_site_setting :profile_dob_enabled, type: :bool, default: true, description: 'Enable date of birth field in user profiles'
 
 register_asset 'stylesheets/dob-picker.scss'
 register_asset 'javascripts/dob-picker.js'
