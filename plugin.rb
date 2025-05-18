@@ -6,8 +6,6 @@
 
 enabled_site_setting :discourse_profile_dob_enabled
 
-register_asset "javascripts/discourse/initializers/dob-datepicker.js"
-
 after_initialize do
   # Register the custom user field for DOB
   register_editable_user_custom_field :date_of_birth
