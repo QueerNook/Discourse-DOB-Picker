@@ -4,7 +4,7 @@
 # authors: QueerNook Team
 # url: https://github.com/queernook/discourse-profile-dob
 
-enabled_site_setting :discourse_profile_dob_enabled
+register_site_setting :discourse_profile_dob_enabled, :boolean, default: true
 
 after_initialize do
   # Register the custom user field for DOB
