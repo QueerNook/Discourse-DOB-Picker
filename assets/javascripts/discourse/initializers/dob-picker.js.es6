@@ -5,25 +5,26 @@ export default {
 
   initialize() {
     withPluginApi("0.8", (api) => {
-      api.modifyClass("component:user-custom-fields", {
-        didInsertElement() {
-          this._super(...arguments);
+      api.decorateWidget("user-custom-fields:after", (helper) => {
+        const element = helper.rawHtml();
 
-          const labels = this.element.querySelectorAll("label.control-label");
-          labels.forEach((label) => {
-            if (label.textContent.includes("Date of Birth")) {
-              const inputId = label.getAttribute("for");
-              const input = this.element.querySelector(`#${inputId}`);
+        const labels = element.querySelectorAll("label.control-label");
+        labels.forEach((label) => {
+          if (label.textContent.includes("Date of Birth")) {
+            const inputId = label.getAttribute("for");
+            const input = element.querySelector(`#${inputId}`);
 
-              if (input && !input.classList.contains("dob-picker")) {
-                input.type = "date";  // HTML5 native date picker
-                input.classList.add("dob-picker");
-                input.placeholder = "YYYY-MM-DD";
-              }
+            if (input && !input.classList.contains("dob-picker")) {
+              input.type = "date";
+              input.classList.add("dob-picker");
+              input.placeholder = "YYYY-MM-DD";
             }
-          });
-        },
+          }
+        });
+
+        return element;
       });
     });
   },
 };
+
