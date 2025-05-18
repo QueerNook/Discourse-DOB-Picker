@@ -1,8 +1,12 @@
 # name: discourse-profile-dob
 # about: Adds a Date of Birth calendar picker to user profiles
-# version: 0.3
+# version: 1.0
 # authors: QueerNook Team
 # url: https://github.com/queernook/discourse-profile-dob
+
+enabled_site_setting :discourse_profile_dob_enabled
+
+register_asset "javascripts/discourse/initializers/dob-datepicker.js"
 
 after_initialize do
   # Register the custom user field for DOB
