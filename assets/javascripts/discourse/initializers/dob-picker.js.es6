@@ -9,16 +9,19 @@ export default {
         didInsertElement() {
           this._super(...arguments);
 
-          const label = this.element.querySelector("label[for='user_custom_field_1']");
-          if (label && label.textContent.includes("Date of Birth")) {
-            const input = this.element.querySelector("#user_custom_field_1");
+          const labels = this.element.querySelectorAll("label.control-label");
+          labels.forEach((label) => {
+            if (label.textContent.includes("Date of Birth")) {
+              const inputId = label.getAttribute("for");
+              const input = this.element.querySelector(`#${inputId}`);
 
-            if (input && !input.classList.contains("dob-picker")) {
-              input.type = "date"; // Native HTML5 date picker
-              input.classList.add("dob-picker");
-              input.placeholder = "YYYY-MM-DD";
+              if (input && !input.classList.contains("dob-picker")) {
+                input.type = "date";  // HTML5 native date picker
+                input.classList.add("dob-picker");
+                input.placeholder = "YYYY-MM-DD";
+              }
             }
-          }
+          });
         },
       });
     });
