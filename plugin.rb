@@ -1,16 +1,20 @@
 # name: discourse-profile-dob
-# about: Adds a Date of Birth calendar picker to user profiles
-# version: 1.0
-# authors: QueerNook Team
-# url: https://github.com/queernook/discourse-profile-dob
+# about: Adds a date of birth field to user profiles
+# version: 0.1
+# authors: QueerNook
+# url: https://github.com/QueerNook/Discourse-Profile-DOB
 
-register_site_setting :discourse_profile_dob_enabled, :boolean, default: true
+enabled_site_setting :profile_dob_enabled
+
+register_site_setting_category(:profile_dob, 'profile_dob') do |settings|
+  settings.register(:profile_dob_enabled, type: :bool, default: true, description: 'Enable date of birth field in user profiles')
+end
+
+register_asset 'stylesheets/dob-picker.scss'
+register_asset 'javascripts/dob-picker.js'
 
 after_initialize do
-  # Register the custom user field for DOB
-  register_editable_user_custom_field :date_of_birth
-
-  # Expose DOB in user serializer (optional, for API access)
+  # Add the date of birth field to the user profile
   add_to_serializer(:user, :date_of_birth) do
     object.custom_fields['date_of_birth']
   end
